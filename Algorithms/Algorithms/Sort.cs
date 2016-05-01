@@ -85,5 +85,20 @@
             }
             return sequence;
         }
+
+        public static int[] BubbleSort(int[] sequence)
+        {
+            for (var i = 0; i < sequence.Length - 2; i++)
+            {
+                for (var j = sequence.Length - 1; j >= i + 1; j--)
+                {
+                    var value = sequence[j];
+                    if (sequence[j] >= sequence[j - 1]) continue;
+                    sequence[j] = sequence[j - 1];
+                    sequence[j - 1] = value;
+                }
+            }
+            return sequence;
+        }
     }
 }
