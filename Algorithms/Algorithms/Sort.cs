@@ -46,5 +46,44 @@
             }
             return sequence;
         }
+
+        public static int[] InsertionSort(int[] sequence)
+        {
+            for (var j = 1; j < sequence.Length; j++)
+            {
+                var value = sequence[j];
+                var i = j;
+                while (i > 0 && sequence[i - 1] > value)
+                {
+                    sequence[i] = sequence[i - 1];
+                    sequence[i - 1] = value;
+                    i--;
+                }
+            }
+            return sequence;
+        }
+
+        public static int[] SelectionSort(int[] sequence)
+        {
+            for (var j = 0; j < sequence.Length - 1; j++)
+            {
+                var min = sequence[j];
+                var index = j;
+                for (var i = j; i < sequence.Length; i++)
+                {
+                    if (sequence[i] < min)
+                    {
+                        min = sequence[i];
+                        index = i;
+                    }
+                }
+                if (sequence[j] != min)
+                {
+                    sequence[index] = sequence[j];
+                    sequence[j] = min;
+                }
+            }
+            return sequence;
+        }
     }
 }
